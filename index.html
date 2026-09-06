@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Husain Sharif</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666;
+    --accent: #2563eb;
+    --card: #f6f7f9;
+    --border: #e5e7eb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --fg: #e8eaed;
+      --muted: #9aa0a6;
+      --accent: #6ea8fe;
+      --card: #181b21;
+      --border: #262b33;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 4rem 1.25rem 6rem; }
+  header h1 { font-size: 2.25rem; margin: 0 0 .25rem; letter-spacing: -0.02em; }
+  header p.tag { color: var(--muted); margin: 0 0 1.25rem; font-size: 1.05rem; }
+  nav a {
+    color: var(--accent); text-decoration: none; margin-right: 1rem; font-size: .95rem;
+  }
+  nav a:hover { text-decoration: underline; }
+  h2 {
+    font-size: 1.15rem; margin: 3rem 0 1rem; padding-bottom: .4rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .project {
+    display: block; padding: 1rem 1.1rem; margin: .75rem 0;
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    text-decoration: none; color: inherit;
+  }
+  .project:hover { border-color: var(--accent); }
+  .project h3 { margin: 0 0 .3rem; font-size: 1rem; }
+  .project p { margin: 0; color: var(--muted); font-size: .92rem; }
+  footer { margin-top: 4rem; color: var(--muted); font-size: .85rem; }
+  .todo { color: var(--muted); font-style: italic; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Husain Sharif</h1>
+    <p class="tag">Computer Science graduate, University of Liverpool</p>
+    <nav>
+      <a href="https://github.com/husainsharif86">GitHub</a>
+      <!-- TODO: add LinkedIn / email / CV links -->
+    </nav>
+  </header>
+
+  <section>
+    <h2>About</h2>
+    <p class="todo">TODO: a short paragraph &mdash; what you work on, your interests,
+    what you're looking for. Replace this text in <code>index.html</code>.</p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <a class="project" href="https://github.com/husainsharif86/space-invaders">
+      <h3>Space Invaders</h3>
+      <p>Java game modelling Space Invaders as an object-oriented design-patterns
+      exercise (Factory, Singleton, Chain of Responsibility, Strategy).</p>
+    </a>
+
+    <a class="project" href="https://github.com/husainsharif86/university-coursework">
+      <h3>University Coursework</h3>
+      <p>Archive of BSc Computer Science coursework &mdash; algorithms, networks,
+      databases, C, robotics, and a secure multi-party e-voting final-year project.</p>
+    </a>
+
+    <!-- TODO: add more projects as you build them -->
+  </section>
+
+  <footer>
+    Built with plain HTML/CSS &middot; source at
+    <a href="https://github.com/husainsharif86/portfolio">github.com/husainsharif86/portfolio</a>
+  </footer>
+</div>
+</body>
+</html>

@@ -4,99 +4,197 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Husain Sharif</title>
+<meta name="description" content="Husain Sharif — Computer Science graduate and MSc Cybersecurity student. Secure systems, applied cryptography, network security.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #ffffff;
-    --fg: #1a1a1a;
-    --muted: #666;
-    --accent: #2563eb;
-    --card: #f6f7f9;
-    --border: #e5e7eb;
+    --bg: #fbfbfc;
+    --bg-elev: #ffffff;
+    --fg: #16181d;
+    --fg-soft: #4b5563;
+    --muted: #7b8494;
+    --accent: #3b5bdb;
+    --accent-soft: #e8ecfb;
+    --border: #e7e8ec;
+    --ring: rgba(59, 91, 219, .35);
+    --shadow: 0 1px 2px rgba(16, 24, 40, .04), 0 8px 24px rgba(16, 24, 40, .06);
+    --radius: 14px;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0f1115;
-      --fg: #e8eaed;
-      --muted: #9aa0a6;
-      --accent: #6ea8fe;
-      --card: #181b21;
-      --border: #262b33;
+      --bg: #0c0d10;
+      --bg-elev: #14161b;
+      --fg: #e9ebef;
+      --fg-soft: #b6bcc8;
+      --muted: #808894;
+      --accent: #8aa4ff;
+      --accent-soft: #1b2130;
+      --border: #232734;
+      --ring: rgba(138, 164, 255, .35);
+      --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 10px 30px rgba(0, 0, 0, .35);
     }
   }
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
-    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
     background: var(--bg);
     color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 4rem 1.25rem 6rem; }
-  header h1 { font-size: 2.25rem; margin: 0 0 .25rem; letter-spacing: -0.02em; }
-  header p.tag { color: var(--muted); margin: 0 0 1.25rem; font-size: 1.05rem; }
-  nav a {
-    color: var(--accent); text-decoration: none; margin-right: 1rem; font-size: .95rem;
+  ::selection { background: var(--accent-soft); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; border-radius: 4px; }
+
+  .wrap { max-width: 660px; margin: 0 auto; padding: clamp(3rem, 8vw, 6rem) 1.35rem 5rem; }
+
+  /* hero */
+  .eyebrow {
+    display: inline-block; font-size: .78rem; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--accent);
+    background: var(--accent-soft); padding: .3rem .6rem; border-radius: 999px;
   }
-  nav a:hover { text-decoration: underline; }
+  h1 {
+    font-size: clamp(2.1rem, 6vw, 2.9rem); font-weight: 700; letter-spacing: -0.025em;
+    margin: 1.1rem 0 .35rem; line-height: 1.1;
+  }
+  .tag { color: var(--fg-soft); font-size: 1.08rem; font-weight: 500; margin: 0; }
+  .intro { color: var(--fg-soft); margin: 1.4rem 0 0; }
+
+  .links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.6rem; }
+  .btn {
+    display: inline-flex; align-items: center; gap: .45rem;
+    padding: .5rem .9rem; border-radius: 10px; font-size: .92rem; font-weight: 500;
+    border: 1px solid var(--border); background: var(--bg-elev); color: var(--fg);
+    transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-1px); box-shadow: var(--shadow); }
+  .btn svg { width: 16px; height: 16px; }
+
+  /* sections */
+  section { margin-top: 3.5rem; }
   h2 {
-    font-size: 1.15rem; margin: 3rem 0 1rem; padding-bottom: .4rem;
-    border-bottom: 1px solid var(--border);
+    font-size: .8rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--muted); margin: 0 0 1.1rem;
   }
-  .project {
-    display: block; padding: 1rem 1.1rem; margin: .75rem 0;
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    text-decoration: none; color: inherit;
+
+  .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .chip {
+    font-size: .86rem; font-weight: 500; padding: .35rem .7rem; border-radius: 999px;
+    background: var(--bg-elev); border: 1px solid var(--border); color: var(--fg-soft);
   }
-  .project:hover { border-color: var(--accent); }
-  .project h3 { margin: 0 0 .3rem; font-size: 1rem; }
-  .project p { margin: 0; color: var(--muted); font-size: .92rem; }
-  footer { margin-top: 4rem; color: var(--muted); font-size: .85rem; }
-  .todo { color: var(--muted); font-style: italic; }
+  .chip.solid { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+
+  .card {
+    display: block; padding: 1.15rem 1.25rem; margin-bottom: .85rem;
+    background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius);
+    color: inherit; transition: border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+  }
+  a.card:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .card-head { display: flex; align-items: baseline; justify-content: space-between; gap: .75rem; }
+  .card h3 { margin: 0; font-size: 1.02rem; font-weight: 600; }
+  .badge { font-size: .74rem; font-weight: 500; color: var(--muted); border: 1px solid var(--border); padding: .1rem .5rem; border-radius: 999px; white-space: nowrap; }
+  .card p { margin: .5rem 0 .7rem; color: var(--fg-soft); font-size: .93rem; }
+  .stack { display: flex; flex-wrap: wrap; gap: .35rem; }
+  .stack span { font-size: .76rem; color: var(--muted); background: var(--bg); border: 1px solid var(--border); padding: .12rem .45rem; border-radius: 6px; }
+
+  footer {
+    margin-top: 4rem; padding-top: 1.4rem; border-top: 1px solid var(--border);
+    color: var(--muted); font-size: .84rem;
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
+<main class="wrap">
   <header>
+    <span class="eyebrow">Portfolio</span>
     <h1>Husain Sharif</h1>
     <p class="tag">Computer Science graduate &middot; MSc Cybersecurity student</p>
-    <nav>
-      <a href="https://github.com/husainsharif86">GitHub</a>
-      <!-- Add LinkedIn / email / CV links here, e.g.
-      <a href="https://www.linkedin.com/in/your-handle">LinkedIn</a>
-      <a href="mailto:you@example.com">Email</a> -->
+    <p class="intro">
+      I graduated in Computer Science from the University of Liverpool in 2024 and
+      am now studying an MSc in Cybersecurity. I'm most interested in secure
+      systems, applied cryptography, and network security &mdash; my undergraduate
+      final-year project built a secure multi-party computation e-voting machine.
+    </p>
+    <nav class="links">
+      <a class="btn" href="https://github.com/husainsharif86">
+        <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        GitHub
+      </a>
+      <!-- Add more when ready:
+      <a class="btn" href="https://www.linkedin.com/in/your-handle">LinkedIn</a>
+      <a class="btn" href="mailto:you@example.com">Email</a>
+      <a class="btn" href="/cv.pdf">CV</a>
+      -->
     </nav>
   </header>
 
   <section>
-    <h2>About</h2>
-    <p>I graduated in Computer Science from the University of Liverpool in 2024 and
-    am now studying an MSc in Cybersecurity. I'm most interested in secure systems,
-    applied cryptography, and network security &mdash; my undergraduate final-year
-    project built a secure multi-party computation e-voting machine. I work mainly
-    in Python, C, Java, SQL, and JavaScript.</p>
+    <h2>Focus</h2>
+    <div class="chips">
+      <span class="chip solid">Secure systems</span>
+      <span class="chip solid">Applied cryptography</span>
+      <span class="chip solid">Network security</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Languages &amp; tools</h2>
+    <div class="chips">
+      <span class="chip">Python</span>
+      <span class="chip">C</span>
+      <span class="chip">Java</span>
+      <span class="chip">SQL</span>
+      <span class="chip">JavaScript</span>
+    </div>
   </section>
 
   <section>
     <h2>Projects</h2>
 
-    <a class="project" href="https://github.com/husainsharif86/space-invaders">
-      <h3>Space Invaders</h3>
-      <p>Java game modelling Space Invaders as an object-oriented design-patterns
-      exercise (Factory, Singleton, Chain of Responsibility, Strategy).</p>
+    <a class="card" href="https://github.com/husainsharif86/space-invaders">
+      <div class="card-head">
+        <h3>Space Invaders</h3>
+        <span class="badge">Java</span>
+      </div>
+      <p>
+        A Space Invaders&ndash;style game modelling the domain with classic
+        object-oriented design patterns: Factory for spaceship creation, Singleton
+        for shared player state, Chain of Responsibility for input handling, and
+        Strategy for movement and firing behaviour.
+      </p>
+      <div class="stack"><span>Java 20</span><span>Maven</span><span>Design patterns</span></div>
     </a>
 
-    <div class="project">
-      <h3>University Coursework <span style="color:var(--muted);font-weight:400">&middot; private</span></h3>
-      <p>Archive of BSc Computer Science coursework &mdash; algorithms, networks,
-      databases, C, robotics, and a secure multi-party e-voting final-year project.</p>
+    <div class="card">
+      <div class="card-head">
+        <h3>University Coursework</h3>
+        <span class="badge">Private</span>
+      </div>
+      <p>
+        A tidied archive of my BSc coursework &mdash; data structures and
+        algorithms, computer networks (SMTP/HTTP email client, reliable data
+        transfer simulator), database development, C and memory management,
+        robotics (discrete Bayes filter), and the secure multi-party computation
+        e-voting final-year project.
+      </p>
+      <div class="stack"><span>Java</span><span>Python</span><span>C</span><span>SQL</span><span>Haskell</span></div>
     </div>
 
-    <!-- TODO: add more projects as you build them -->
+    <!-- Add new projects here as you build them, copying the <a class="card"> block above. -->
   </section>
 
   <footer>
-    Built with plain HTML/CSS &middot; source at
-    <a href="https://github.com/husainsharif86/portfolio">github.com/husainsharif86/portfolio</a>
+    Built with plain HTML &amp; CSS &middot;
+    <a href="https://github.com/husainsharif86/portfolio">source</a>
   </footer>
-</div>
+</main>
 </body>
 </html>
